@@ -2,7 +2,7 @@ const form = document.querySelector('#validationForm');
 const user = { firstName: '', lastName: '', email: '', password: '' };
 
 const validateText = (id) => {
-    const input = document.querySelector(id);    // hämtar en referens till våran input med hjälp av id
+    const input = document.querySelector(id);  // hämtar en referens till våran input med hjälp av id
     const nr = /\d/;
     if (input.value.trim() === '') {
         return setError(input); // Här kallar vi på setError funktionen och skickar med våran referens till input
@@ -16,13 +16,12 @@ const validateText = (id) => {
     else {
         return setSuccess(input);
     }
-
 }
 
 const validateEmail = (id) => {
     const email = document.querySelector(id);
 
-    const regEx = /^[\w-\.\+]+@([\w-]+\.)+[\w-]{2,6}$/;
+    const regEx = /^[ÄÖÅäöåA-Za-z0-9._%+-]+@(?:[ÄÖÅäöåA-Za-z0-9-]+\.)+[A-Za-z]{2,6}$/; // /^[\w-\.\+]+@([\w-]+\.)+[\w-]{2,6}$/;
 
     if (email.value.trim() === '') {
         return setError(email);
